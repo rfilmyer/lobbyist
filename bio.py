@@ -1,7 +1,8 @@
-#This module contains all of the player and NPC creation functions
+# This module contains all of the player and NPC creation functions
 import random
+# import names
 
-#consider folding these functions into classes?
+# consider folding these functions into classes?
 def issue():
     issues = ("Immigration", "Healthcare Reform", "Gun Control",
     "Tax Reform", "National Security")
@@ -27,12 +28,16 @@ class Player(object):
         self.org = self.org_raw.format(self.issue)
     def introduce(self):
         '''Gives the player the background story'''  
-        print 'The year is 2014, and the hot issue of the day is ' \
-        '{0}. The media has been playing up a policy battle between ' \
-        'Democrats and Republicans.'.format(self.issue)
-        print 'As a fellow at the {0}, you are one of the forefront '\
-        'experts on this issue.'.format(self.org)
-        print "Congress has called you to testify at its hearing next week."
+        print('The year is 2014, and the hot issue of the day is '
+        '{0}. The media has been playing up a policy battle between '
+        'Democrats and Republicans.'.format(self.issue))
+        print('As a fellow at the {0}, you are one of the forefront '
+        'experts on this issue.'.format(self.org))
+        print("Congress has called you to testify at its "
+        "hearing next week.")
 
 class Rep(object):
+#    def __init__(self):
+#        self.fname = names.get_first_name()
+#        self.lname = names.get_last_name()
     pass 
