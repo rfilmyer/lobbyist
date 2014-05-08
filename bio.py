@@ -14,13 +14,6 @@ def org():
     "Foundation for Responsible {0}")
     return random.choice(prefix)
 
-def partisan():
-    '''returns on a scale from 1-100 how lib/conservative position is.
-    Uses a triangular distribution. More "interesting" candidates than
-    a pseudo-gaussian distribution.
-    '''
-    return random.triangular(1,100,50)
-
 class Player(object):
     def create(self):
         self.issue = issue()
@@ -37,7 +30,9 @@ class Player(object):
         "hearing next week.")
 
 class Rep(object):
-#    def __init__(self):
-#        self.fname = names.get_first_name()
-#        self.lname = names.get_last_name()
-    pass 
+    def __init__(self,fname,lname):
+        self.fname = fname
+        self.lname = lname
+        self.in_favor = bool(random.getrandbits(1))     
+    def bio(self):
+        return self.fname, self.lname, self.in_favor 
