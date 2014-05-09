@@ -20,16 +20,34 @@ class Question(object):
              print('2) Play up the issue')
              answer = raw_input('> ')
         play_up = bool(int(answer) - 1)
-        self.answer(issue,rep,play_up)
+        score = self.answer(issue,rep,play_up)
+        return score
 
     def answer(self,issue,rep,play_up):
         if rep.in_favor:
             if play_up:
-                print('you chose wisely')
+                print('You hammer down the issue. "This will absolutely'
+                      ' have a huge benefit."')
+                print('Rep. ' + rep.lname + ' seems content with your'
+                      ' response')
+                return 1
             else:
-                print('You fool of a took!')
+                print('You promise the rep that ' + issue + 'is on '
+                      '"a completely different plane" from their '
+                      'concerns.')
+                print('Meanwhile the legislator is confused why you '
+                      'would downplay such a crucial part of your '
+                      'legislation...')
+                return 0
         else:
             if play_up:
-                print('Well great, now the rep is even more worried!')
+                print('In an attempt to mirror the "Cross of Gold" '
+                      'speech, you talk at great length about the '
+                      '"earth-shattering" impacts of ' + issue + ' bill. ')
+                print('The representative appears a bit spooked. Whoops.')
+                return 0
             else:
-                print('No worries m8')
+                print('You assuage Rep. ' + rep.lname + '\'s concerns '
+                      'completely.')
+                print('They seem a bit more at ease than before')
+                return 1 

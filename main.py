@@ -40,6 +40,8 @@ print('After prepping all night, you walk up the steps to the Capitol,'
 raw_input()
 
 
-
-first_q = hearing.Question()
-first_q.ask(player.issue,firstrep)
+score = 0
+for rep in reps:
+    question = hearing.Question()
+    score += question.ask(player.issue,rep)
+print("Your score is: " + str(score))
