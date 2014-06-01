@@ -1,8 +1,9 @@
 # This module contains all of the player and NPC creation functions
 import random
-# import names
+#import names
 
-# consider folding these functions into classes?
+#Initially considered having these to functions as classes. Decision was
+#better as Player() attributes. Works better if I add other lobbyists.
 def issue():
     issues = ("Immigration", "Healthcare Reform", "Gun Control",
     "Tax Reform", "National Security")
@@ -30,9 +31,9 @@ class Player(object):
         "hearing next week.")
 
 class Rep(object):
-    def __init__(self,fname,lname):
-        self.fname = fname
-        self.lname = lname
+    def __init__(self): #I don't trust myself to allow for input here
+        self.fname = names.get_first_name()
+        self.lname = names.get_last_name()
         self.in_favor = bool(random.getrandbits(1))     
     def bio(self):
         return self.fname, self.lname, self.in_favor 

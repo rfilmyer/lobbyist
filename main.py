@@ -5,11 +5,12 @@ player = bio.Player()
 player.create()
 
 #later in life I'll use random names from the "names" module...
-firstrep = bio.Rep('Mitt','Kerry')
-secondrep = bio.Rep('Nancy','Boehner')
-thirdrep = bio.Rep('George','Gore')
-fourthrep = bio.Rep('Harry','McConnell')
-fifthrep = bio.Rep('Rand','Warren')
+#the future is now!... oh crap I have to restructure this whole thing
+firstrep = bio.Rep()
+secondrep = bio.Rep()
+thirdrep = bio.Rep()
+fourthrep = bio.Rep()
+fifthrep = bio.Rep()
 reps = [firstrep, secondrep, thirdrep, fourthrep, fifthrep]
 
 player.introduce()
