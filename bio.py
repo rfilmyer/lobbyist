@@ -1,6 +1,6 @@
 # This module contains all of the player and NPC creation functions
 import random
-#import names
+import names
 
 #Initially considered having these to functions as classes. Decision was
 #better as Player() attributes. Works better if I add other lobbyists.
